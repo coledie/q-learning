@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     action_space = [i for i in range(env.action_space.n)]
 
-    win_score = 200
+    win_score = 195
     
     n_episodes = 10000
     max_turns = 200
@@ -63,11 +63,10 @@ if __name__ == '__main__':
             if done:
                 break
 
-        print(f'Episode: {episode}, Reward: {r}\n\n\n')
+        if not episode % 10:
+            print(f'Episode: {episode}, Reward: {r}\n\n')
+        
         if r >= win_score:
-            if not wins:
-                print(f'Ding, Episode: {episode}')
-
             wins += 1
             if wins == 100:
                 print(f'Ding Ding Ding, Episode: {episode-100} - {episode}')
