@@ -30,8 +30,8 @@ if __name__ == '__main__':
     n_episodes = 10000
     max_turns = 200
 
-    get_alpha = lambda x: .6 if x < 200 else .1
-    get_epsilon = lambda x: 1 if x < 200 else .1
+    get_alpha = lambda t: .6 if t < 200 else .1
+    get_epsilon = lambda t: 1 if t < 200 else .1
     gamma = 1
 
     q = {}
